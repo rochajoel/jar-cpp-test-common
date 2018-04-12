@@ -7,8 +7,6 @@
 #include <unistd.h>
 #include <fcntl.h>
 
-#include <cute/cute.h>
-
 namespace TestUnitCommon
 {
 	using namespace std;
@@ -32,7 +30,7 @@ namespace TestUnitCommon
 		void send(const string data)
 		{
 			if (write(m_ttyFD, &data[0], data.size()) == -1)
-				FAILM("Could not write on tty!\n");
+				fprintf(stderr, "Could not write on tty!\n");
 		}
 
 		char* getSlaveTTYName()
