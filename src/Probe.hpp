@@ -12,7 +12,7 @@ namespace TestUnitCommon
 	using namespace std::chrono;
 
 	template<typename T>
-	class CProbe
+	class Probe
 	{
 	protected:
 		mutex					m_mutex;
@@ -20,8 +20,8 @@ namespace TestUnitCommon
 		T*						m_data;
 
 	public:
-		CProbe() : m_data(nullptr) {}
-		~CProbe() { delete m_data; }
+		Probe() : m_data(nullptr) {}
+		~Probe() { delete m_data; }
 
 		void pushData(T* data)
 		{
