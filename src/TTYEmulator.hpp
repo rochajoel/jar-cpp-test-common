@@ -13,18 +13,18 @@ namespace TestUnitCommon
 {
 	using namespace std;
 
-	class CTTYEmulator
+	class TTYEmulator
 	{
 		int m_ttyFD;
 
 	public:
-		CTTYEmulator()
+		TTYEmulator()
 		{
 			m_ttyFD = posix_openpt(O_RDWR);
 
 			unlockpt(m_ttyFD);
 		}
-		virtual ~CTTYEmulator()
+		virtual ~TTYEmulator()
 		{
 			close(m_ttyFD);
 		}
