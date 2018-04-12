@@ -30,7 +30,7 @@ namespace TestUnitCommon
 		void send(const string data)
 		{
 			if (write(m_ttyFD, &data[0], data.size()) == -1)
-				fprintf(stderr, "Could not write on tty!\n");
+				throw ios_base::failure("Could not write on tty!\n");
 		}
 
 		char* getSlaveTTYName()
