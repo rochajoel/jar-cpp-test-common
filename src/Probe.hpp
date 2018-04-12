@@ -15,13 +15,13 @@ namespace TestUnitCommon
 	class Probe
 	{
 	protected:
-		mutex					m_mutex;
+		mutex				m_mutex;
 		condition_variable		m_condition;
-		T*						m_data;
+		T*				m_data;
 
 	public:
 		Probe() : m_data(nullptr) {}
-		~Probe() { delete m_data; }
+		virtual ~Probe() { delete m_data; }
 
 		void pushData(T* data)
 		{
