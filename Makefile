@@ -1,15 +1,15 @@
 solution_src_cpp = $(wildcard src/*.cpp)
 solution_obj_cpp = $(solution_src_cpp:.cpp=.o)
 
-$(solution_obj_cpp): %.o: %.cpp
-	gcc -std=c++11 -c -o $@ $^
-
 all: $(solution_obj_cpp)
 	@echo src: $(solution_src_cpp)
 	@echo dst: $(solution_obj_cpp)
 	@echo All done!
+	
+$(solution_obj_cpp): %.o: %.cpp
+	gcc -std=c++11 -c -o $@ $^
 
 test:
-	echo Test Hello World!
+	@echo Test Hello World!
 
 
