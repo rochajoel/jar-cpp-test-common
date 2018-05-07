@@ -2,6 +2,7 @@
 #ifndef JAR_TTYEMULATOR_HPP_
 #define JAR_TTYEMULATOR_HPP_
 
+#include <ios>
 #include <string>
 
 #include <unistd.h>
