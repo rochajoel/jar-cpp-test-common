@@ -1,5 +1,5 @@
-solution_src_cpp := $(wildcard *.cpp)
-solution_obj_cpp := $(subst %.cpp, %.o, $(solution_src_cpp))
+solution_src_cpp := $(wildcard src/*.cpp)
+solution_obj_cpp := $(solution_src_cpp:.cpp=.o)
 
 $(solution_obj_cpp): %.o: %.cpp
 	gcc -o $@ $<
